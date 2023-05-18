@@ -4,6 +4,7 @@ import {
 	CardMedia,
 	CircularProgress,
 	Container,
+	Grid,
 	LinearProgress,
 	Typography,
 } from "@mui/material";
@@ -95,99 +96,227 @@ const SinglrCocktail = () => {
 	}
 	return (
 		<>
-			<Container>
-				<Box sx={{ display: "flex", justifyContent: "center", m: 6 }}>
+			<Container
+				sx={{
+					columnGap: "0.1rem",
+					rowGap: "0.5rem",
+					display: "Grid",
+					justifyContent: "center",
+					alignItems: "left",
+					fontWeight: "bold",
+				}}
+			>
+				<Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "left",
+						m: 1,
+					}}
+				>
 					<Link to='/'>
 						<Button
 							variant='contained'
 							color={"success"}
-							sx={{ width: "10rem", backgroundColor: "#339933" }}
+							sx={{
+								width: "10rem",
+								backgroundColor: "#476a2e",
+								marginTop: "4rem",
+								"&:hover": {
+									backgroundColor: "#cce6cc",
+									color: "#4da64d",
+								},
+							}}
 						>
 							Back Home
 						</Button>
 					</Link>
 				</Box>
-				<Box sx={{ display: "flex" }}>
+				<Box>
+					<Typography
+						variant='h4'
+						letterSpacing={3}
+						sx={{
+							alignItems: "center",
+							display: "flex",
+							marginBottom: "3.5rem",
+							justifyContent: "center",
+							fontWeight: "bold",
+						}}
+					>
+						{cocktail.name}
+					</Typography>
+				</Box>
+				<Box
+					sx={{ display: "flex", justifyContent: "left", alignItems: "left" }}
+				>
 					<Box>
 						<CardMedia
 							component='img'
 							src={cocktail.image}
 							alt={cocktail.name}
-							sx={{ width: "30rem", marginRight: "2rem" }}
+							sx={{ width: "22rem", marginRight: "0.5rem" }}
 						></CardMedia>
 					</Box>
-					<Box sx={{ p: 2 }}>
+					<Box sx={{ p: 2, display: "block" }}>
 						<Box sx={{ display: "flex", p: 0.5 }}>
 							<Box
-								sx={{ borderRadius: "1rem", backgroundColor: "#b3d9b3", p: 1 }}
+								sx={{
+									borderRadius: "15%",
+									backgroundColor: "#d4e6a5",
+									p: 1,
+									height: "70%",
+								}}
 							>
-								<Typography variant='h6'>Name :</Typography>
+								<Typography variant='body1' fontWeight='bold'>
+									Name :
+								</Typography>
 							</Box>
-							<Box sx={{ marginLeft: "1.22rem", marginTop: "5px" }}>
-								<Typography paragraph>{cocktail.name}</Typography>
-							</Box>
-						</Box>
-						<Box sx={{ display: "flex", p: 1 }}>
 							<Box
-								sx={{ borderRadius: "1rem", backgroundColor: "#b3d9b3", p: 1 }}
+								sx={{
+									marginLeft: "0.22rem",
+									marginTop: "5px",
+									p: 0.6,
+								}}
 							>
-								<Typography variant='h6'>Category :</Typography>
-							</Box>
-							<Box sx={{ marginLeft: "1.22rem", marginTop: "5px" }}>
-								<Typography paragraph>{cocktail.category}</Typography>
-							</Box>
-						</Box>
-						<Box sx={{ display: "flex", p: 1 }}>
-							<Box
-								sx={{ borderRadius: "1rem", backgroundColor: "##b3d9b3", p: 1 }}
-							>
-								<Typography variant='h6'>Info :</Typography>
-							</Box>
-							<Box sx={{ marginLeft: "1.22rem", marginTop: "5px" }}>
-								<Typography paragraph>{cocktail.info}</Typography>
-							</Box>
-						</Box>
-						<Box sx={{ display: "flex", p: 1 }}>
-							<Box
-								sx={{ borderRadius: "1rem", backgroundColor: "#b3d9b3", p: 1 }}
-							>
-								<Typography variant='h6'>Glass :</Typography>
-							</Box>
-							<Box sx={{ marginLeft: "1.22rem", marginTop: "5px" }}>
-								<Typography paragraph>{cocktail.glass}</Typography>
+								<Typography variant='body2' fontWeight='bold'>
+									{cocktail.name}
+								</Typography>
 							</Box>
 						</Box>
 						<Box sx={{ display: "flex", p: 1 }}>
 							<Box
 								sx={{
-									borderRadius: "1rem",
-									backgroundColor: "#b3d9b3",
+									borderRadius: "15%",
+									backgroundColor: "#d4e6a5",
 									p: 1,
-									height: "2.5rem",
+									height: "60%",
 								}}
 							>
-								<Typography
-									sx={{
-										width: "7rem",
-									}}
-									variant='h6'
-								>
-									Instructons :
+								<Typography variant='body2' fontWeight='bold'>
+									Category :
 								</Typography>
 							</Box>
-							<Box sx={{ marginLeft: "1.22rem", marginTop: "5px" }}>
-								<Typography paragraph>{cocktail.instructions}</Typography>
+							<Box sx={{ marginLeft: "0.22rem", marginTop: "5px", p: 0.6 }}>
+								<Typography variant='body2' fontWeight='bold'>
+									{cocktail.category}
+								</Typography>
 							</Box>
 						</Box>
 						<Box sx={{ display: "flex", p: 1 }}>
 							<Box
-								sx={{ borderRadius: "1rem", backgroundColor: "#b3d9b3", p: 1 }}
+								sx={{
+									borderRadius: "15%",
+									backgroundColor: "#d4e6a5",
+									p: 1,
+									height: "60%",
+								}}
 							>
-								<Typography variant='h6'>Ingredients :</Typography>
+								<Typography variant='body2' fontWeight='bold'>
+									Info :
+								</Typography>
 							</Box>
-							<Box sx={{ marginLeft: "1.22rem", marginTop: "5px" }}>
-								<Typography paragraph>{cocktail.ingredients}</Typography>
+							<Box
+								sx={{
+									marginLeft: "0.22rem",
+									marginTop: "5px",
+									p: 0.6,
+								}}
+							>
+								<Typography variant='body2' fontWeight='bold'>
+									{cocktail.info}
+								</Typography>
 							</Box>
+						</Box>
+						<Box sx={{ display: "flex", p: 1 }}>
+							<Box
+								sx={{
+									borderRadius: "15%",
+									backgroundColor: "#d4e6a5",
+									p: 1,
+									height: "60%",
+								}}
+							>
+								<Typography variant='body2' fontWeight='bold'>
+									Glass :
+								</Typography>
+							</Box>
+							<Box
+								sx={{
+									marginLeft: "0.22rem",
+									marginTop: "5px",
+									p: 0.6,
+								}}
+							>
+								<Typography variant='body2' fontWeight='bold'>
+									{cocktail.glass}
+								</Typography>
+							</Box>
+						</Box>
+						<Box sx={{ display: "flex", p: 1 }}>
+							<Box
+								sx={{
+									borderRadius: "15%",
+									backgroundColor: "#d4e6a5",
+									p: 1,
+									height: "60%",
+									width: "13%",
+								}}
+							>
+								<Typography
+									fontWeight='bold'
+									sx={{
+										width: "7rem",
+									}}
+									variant='body2'
+								>
+									Instructons :
+								</Typography>
+							</Box>
+							<Box
+								sx={{
+									marginLeft: "0.22rem",
+									marginTop: "5px",
+									p: 0.6,
+								}}
+							>
+								<Typography variant='body2' fontWeight='bold'>
+									{cocktail.instructions}
+								</Typography>
+							</Box>
+						</Box>
+						<Box sx={{ display: "flex", p: 1 }}>
+							<Box
+								sx={{
+									borderRadius: "15%",
+									backgroundColor: "#d4e6a5",
+									p: 1,
+									height: "60%",
+									fontWeight: "bold",
+									width: "15%",
+								}}
+							>
+								<Typography variant='body2' sx={{ fontWeight: "bold" }}>
+									Ingredients :
+								</Typography>
+							</Box>
+							{cocktail.ingredients.map((ingredient) => {
+								return (
+									<Box
+										sx={{
+											marginLeft: "0.22rem",
+											marginTop: "5px",
+											p: 0.6,
+											fontWeight: "bold",
+										}}
+									>
+										<Typography variant='body2' sx={{ fontWeight: "bold" }}>
+											{ingredient}
+											{ingredient && ","}
+										</Typography>
+									</Box>
+								);
+							})}
 						</Box>
 					</Box>
 				</Box>

@@ -10,9 +10,15 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
 	return (
-		<AppBar position='static' elevation={8}>
-			<Container maxWidth='xl' sx={{ background: "lightgrey" }}>
-				<Toolbar disableGutters>
+		<AppBar
+			position='static'
+			elevation={12}
+			sx={{ borderBottom: "solid", borderBottomColor: "green",borderBottomWidth:'4' }}
+		>
+			<Container maxWidth='xl' sx={{ background: "white" }}>
+				<Toolbar
+					disableGutters
+				>
 					<Container
 						sx={{
 							display: { xs: "flex", md: "flex", xl: "flex" },
@@ -42,7 +48,8 @@ const Navbar = () => {
 					>
 						<Link to='/' style={{ textDecoration: "none" }}>
 							<Typography
-								variant='h5'
+								variant='h6'
+								letterSpacing={2}
 								sx={{
 									marginRight: "1rem",
 									color: "black",
@@ -57,7 +64,8 @@ const Navbar = () => {
 						</Link>
 						<Link to='/About' style={{ textDecoration: "none" }}>
 							<Typography
-								variant='h5'
+								variant='h6'
+								letterSpacing={2}
 								sx={{
 									color: "black",
 									onclick: { color: "red" },

@@ -5,10 +5,20 @@ const About = () => {
 	return (
 		<>
 			<Container
-				sx={{ justifyContent: "center", display: "flex", alignItems: "center" }}
+				sx={{
+					justifyContent: "center",
+					display: "block",
+					alignItems: "center",
+				}}
 			>
+				<Container sx={{ justifyContent: "center" ,alignItems:'center',display:'flex',marginTop:'4rem'}}>
+					<Typography variant='h4'>ABOUT US</Typography>
+				</Container>
 				<Box sx={{ p: 10 }}>
-					<Typography variant='h6'>
+					<Typography
+						paragraph
+						sx={{ lineHeight: "2rem", fontw: "400", letterSpacing: "2px" }}
+					>
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
 						praesentium illum consequatur quae, voluptatem inventore maxime
 						expedita reiciendis ea sapiente. Facilis eaque assumenda minus.

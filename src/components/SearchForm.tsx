@@ -38,22 +38,28 @@ const SearchForm = () => {
 
 	return (
 		<>
-			<Container sx={{ paddingBottom: "4rem", maxWidth: "5rem" }}>
+			<Container sx={{ paddingBottom: "4rem", width: "50vw", height: "auto" }}>
 				<Paper
-                elevation={8}
-                
+					elevation={8}
 					sx={{
 						maxBlockSize: "5rem",
 						alignItems: "center",
 						justifyContent: "center",
 						display: "flex",
 						p: 3,
-						marginTop: "10rem",
+						marginTop: "5rem",
+						overflow: "hidden",
 					}}
 				>
 					<Container sx={{}}>
 						<Box>
-							<Typography variant='h5'>
+							<Typography
+								variant='body2'
+								fontWeight='bold'
+								letterSpacing={4}
+								color='#476a2e'
+								sx={{ m: 2 }}
+							>
 								Search your Favorite Cocktail
 							</Typography>
 						</Box>
@@ -65,12 +71,13 @@ const SearchForm = () => {
 							}}
 						>
 							<TextField
+								fullWidth
 								variant='filled'
 								value={search}
 								onChange={(e) => {
 									setSearch(e.target.value);
 								}}
-								label='Cocktail'
+								sx={{ marginBottom: "0.5rem", border: 1 }}
 							/>
 						</Box>
 					</Container>
